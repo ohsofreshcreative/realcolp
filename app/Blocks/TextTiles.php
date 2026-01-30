@@ -101,7 +101,7 @@ class TextTiles extends Block
 				'ui_off_text' => 'Nie',
 			])
 			->addTrueFalse('greybg', [
-				'label' => 'Szare tło',
+				'label' => 'Podstawowe tło',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',

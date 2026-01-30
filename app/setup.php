@@ -201,6 +201,30 @@ add_action('widgets_init', function () {
 	] + $defaultConfig);
 });
 
+/*--- DISABLE COMMENTS ---*/
+
+add_action('init', function () {
+    remove_post_type_support('post', 'comments');
+    remove_post_type_support('page', 'comments');
+    
+    add_filter('comments_open', '__return_false', 20, 2);
+    add_filter('pings_open', '__return_false', 20, 2);
+    
+    add_filter('comments_array', '__return_empty_array', 10, 2);
+});
+
+add_action('admin_init', function () {
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+});
+
+add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+});
+
+add_action('wp_before_admin_bar_render', function () {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+});
 
 /*--- CATEGORY IMAGE ---*/
 
@@ -398,8 +422,7 @@ add_action('admin_footer', function () {
   <?php
 });
 
-
-
+/*--- REDIRECT TAXONOMY TO PAGE ---*/
 
 add_action('template_redirect', function () {
     // Sprawdź, czy jesteśmy na stronie archiwum JAKIEJKOLWIEK taksonomii
@@ -491,3 +514,36 @@ add_action('template_redirect', function () {
 				'menu_icon' => 'dashicons-admin-users',
 			]);
 		});
+
+
+/*--- BUBBLE ---*/
+
+add_action('wp_footer', function () {
+    // Pobierz obiekt nadrzędnej strony "Sklep" na podstawie jej adresu URL (/produkty).
+    $parent_shop_page = get_page_by_path('produkty');
+
+    // Sprawdź czy to strona główna
+    if (is_front_page()) {
+        echo view('partials.contact-bubble');
+        return;
+    }
+
+    // Jeśli strona nadrzędna nie istnieje, zakończ, aby uniknąć błędów.
+    if (!$parent_shop_page) {
+        return;
+    }
+
+    // Sprawdź, czy bieżąca strona jest podstroną strony "Sklep".
+    $is_child_of_shop_page = is_page() && get_queried_object()->post_parent === $parent_shop_page->ID;
+
+    // Jeśli to podstrona sklepu (czyli Twoja niestandardowa kategoria), pokaż dedykowany dymek.
+    if ($is_child_of_shop_page) {
+        echo view('partials.category-bubble');
+        return; // Zakończ, aby nie pokazywać drugiego dymka.
+    }
+
+    // Jeśli to jakakolwiek inna strona WooCommerce (np. strona produktu, koszyk), pokaż ogólny dymek.
+    if (function_exists('is_woocommerce') && is_woocommerce()) {
+        echo view('partials.contact-bubble');
+    }
+});

@@ -26,7 +26,7 @@ class ThemeServiceProvider extends SageServiceProvider
 	{
 		parent::boot();
 
-		
+
 		// USATAWIENIA MOTYWU
 		add_action('acf/init', function () {
 			if (function_exists('acf_add_options_page')) {
@@ -47,9 +47,9 @@ class ThemeServiceProvider extends SageServiceProvider
 				]);
 
 				acf_add_options_page([
-					'page_title' => 'Gabinety - Stopka',
-					'menu_title' => 'Gabinety - Stopka',
-					'menu_slug'  => 'places-footer',
+					'page_title' => 'Popup kontaktowy',
+					'menu_title' => 'Popup kontaktowy',
+					'menu_slug' => 'bubble',
 					'capability' => 'edit_posts',
 					'redirect'   => false,
 				]);

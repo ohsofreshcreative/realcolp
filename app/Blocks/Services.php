@@ -78,7 +78,7 @@ class Services extends Block
 					'none' => 'Brak (domyślne)',
 					'section-white' => 'Białe',
 					'section-light' => 'Jasne',
-					'section-gray' => 'Szare',
+					'section-base' => 'Podstawowe',
 					'section-brand' => 'Marki',
 					'section-gradient' => 'Gradient',
 					'section-dark' => 'Ciemne',

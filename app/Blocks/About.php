@@ -37,6 +37,7 @@ class About extends Block
 				'open' => false,
 				'multi_expand' => true,
 			])
+
 			/*--- GROUP ---*/
 			->addTab('Elementy', ['placement' => 'top'])
 			->addGroup('g_about', ['label' => ''])
@@ -45,6 +46,7 @@ class About extends Block
 				'return_format' => 'array', // lub 'url', lub 'id'
 				'preview_size' => 'thumbnail',
 			])
+			->addText('header', ['label' => 'Nagłówek'])
 			->addWysiwyg('txt', [
 				'label' => 'Treść',
 				'tabs' => 'all', // 'visual', 'text', 'all'
@@ -54,6 +56,26 @@ class About extends Block
 			->addLink('button', [
 				'label' => 'Przycisk',
 				'return_format' => 'array',
+			])
+			->endGroup()
+			
+			/*--- GROUP #2 ---*/
+			->addTab('Zdjęcia dodatkowe', ['placement' => 'top'])
+			->addGroup('g_about_2', ['label' => ''])
+			->addImage('image1', [
+				'label' => 'Obraz #1',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
+			])
+			->addImage('image2', [
+				'label' => 'Obraz #2',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
+			])
+			->addImage('image3', [
+				'label' => 'Obraz #3',
+				'return_format' => 'array', // lub 'url', lub 'id'
+				'preview_size' => 'thumbnail',
 			])
 			->endGroup()
 
@@ -102,7 +124,7 @@ class About extends Block
                     'none' => 'Brak (domyślne)',
                     'section-white' => 'Białe',
                     'section-light' => 'Jasne',
-                    'section-gray' => 'Szare',
+                    'section-base' => 'Podstawowe',
                     'section-brand' => 'Marki',
                     'section-gradient' => 'Gradient',
                     'section-dark' => 'Ciemne',
@@ -119,6 +141,7 @@ class About extends Block
 	{
 		return [
 			'g_about' => get_field('g_about'),
+			'g_about_2' => get_field('g_about_2'),
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),
 			'nolist' => get_field('nolist'),

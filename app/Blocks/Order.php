@@ -97,7 +97,7 @@ class Order extends Block
                     'none' => 'Brak (domyślne)',
                     'section-white' => 'Białe',
                     'section-light' => 'Jasne',
-                    'section-gray' => 'Szare',
+                    'section-base' => 'Podstawowe',
                     'section-brand' => 'Marki',
                     'section-dark' => 'Ciemne',
                 ],

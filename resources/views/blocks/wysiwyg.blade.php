@@ -7,7 +7,7 @@ $sectionClass .= $gap ? ' wider-gap' : '';
 
 $bgClass = [
 'light' => ' section-light',
-'gray' => ' section-gray',
+'gray' => ' section-base',
 'white' => ' section-white',
 'brand' => ' section-brand',
 'dark' => ' section-dark',

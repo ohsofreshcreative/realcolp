@@ -2,7 +2,7 @@
 $sectionClass = collect([
 $nomt ? '!mt-0' : '',
 $lightbg ? 'section-light' : '',
-$graybg ? 'section-gray' : '',
+$graybg ? 'section-base' : '',
 $whitebg ? 'section-white' : '',
 $brandbg ? 'section-brand' : '',
 $darkbg ? 'section-dark' : '',

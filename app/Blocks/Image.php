@@ -45,11 +45,6 @@ class Image extends Block
 				'return_format' => 'array', // lub 'url', lub 'id'
 				'preview_size' => 'thumbnail',
 			])
-			->addImage('image2', [
-				'label' => 'Obraz #2',
-				'return_format' => 'array', // lub 'url', lub 'id'
-				'preview_size' => 'thumbnail',
-			])
 			->endGroup()
 
 			/*--- USTAWIENIA BLOKU ---*/
@@ -97,7 +92,7 @@ class Image extends Block
 					'none' => 'Brak (domyślne)',
 					'section-white' => 'Białe',
 					'section-light' => 'Jasne',
-					'section-gray' => 'Szare',
+					'section-base' => 'Podstawowe',
 					'section-brand' => 'Marki',
 					'section-gradient' => 'Gradient',
 					'section-dark' => 'Ciemne',

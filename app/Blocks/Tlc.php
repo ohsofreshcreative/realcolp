@@ -122,7 +122,7 @@ class Tlc extends Block
 				'choices' => [
 					'x' => '— brak —',
 					'light' => 'Jasne tło',
-					'gray' => 'Szare tło',
+					'gray' => 'Podstawowe tło',
 					'white' => 'Białe tło',
 					'brand' => 'Tło marki',
 					'dark' => 'Ciemne tło',

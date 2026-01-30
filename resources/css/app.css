@@ -8,42 +8,57 @@
 /* Twoje “źródłowe” zmienne RGB */
 :root {
   /* base */
-  --body: 42 63 80; /* #2A3F50 */
+  --body: 14 32 31; /* #0E201F */
 
-  /* primary scale (zielony ze screena) */
-  --primary: 29 63 52; /* #1D3F34 */
-  --p-hover: 24 53 43; /* #18352B */
-  --p-50: 210 217 214; /* #D2D9D6 */
-  --p-100: 211 245 234; /* #D3F5EA */
-  --p-200: 198, 232, 221; /* #C6E8DD */
-  --p-300: 179 224 209; /* #B3E0D1 */
-  --p-400: 133 200 178; /* #85C8B2 */
-  --p-500: 68 147 122; /* #44937A */
-  --p-600: 24 53 43; /* #18352B */
-  --p-700: 19 42 35; /* #132A23 */
-  --p-800: 15 32 26; /* #0F201A */
-  --p-900: 10 21 17; /* #0A1511 */
-  --p-dark: 6 13 10; /* #060D0A */
-  --action: rgb(17, 125, 90); /* #117D5A */
+--primary: 0 97 80;/* #006150 (BASE) */
+--p-hover: 0 81 67;/* #005143 (60%) */
 
+--p-50: 204 223 220;/* #CCDFDC (10%) */
+--p-100: 170 202 197;/* #AACAC5 (20%) */
+--p-200: 128 176 168;/* #80B0A8 (30%) */
+--p-300: 85 150 138;/* #55968A (40%) */
+--p-400: 42 123 109;/* #2A7B6D (50%) */
+--p-500: 0 97 80;/* #006150 (BASE) */
+--p-600: 0 81 67;/* #005143 (60%) */
+--p-700: 0 65 53;/* #004135 (70%) */
+--p-800: 0 49 40;/* #003128 (80%) */
+--p-900: 0 32 27;/* #00201B (90%) */
+--p-dark: 0 19 16;/* #001310 (100%) */
 
-  /* secondary scale (pomarańcz/brąz ze screena) */
-  --secondary: 222 133 93; /* #DE855D */
-  --s-hover: 185 111 78; /* #B96F4E */
-  --s-100: 248 231 223; /* #F8E7DF */
-  --s-200: 244 214 201; /* #F4D6C9 */
-  --s-300: 239 194 174; /* #EFC2AE */
-  --s-400: 233 174 147; /* #E9AE93 */
-  --s-500: 228 153 120; /* #E49978 */
-  --s-600: 185 111 78; /* #B96F4E */
-  --s-700: 148 89 62; /* #94593E */
-  --s-800: 111 67 47; /* #6F432F */
-  --s-900: 74 44 31; /* #4A2C1F */
-  --s-dark: 44 27 19; /* #2C1B13 */
+--secondary: 35 97 179;/* #2361B3 (BASE) */
+--s-hover: 29 81 149;/* #1D5195 (60%) */
+
+--s-50: 211 223 240;/* #D3DFF0 (10%) */
+--s-100: 182 202 230;/* #B6CAE6 (20%) */
+--s-200: 145 176 217;/* #91B0D9 (30%) */
+--s-300: 108 150 204;/* #6C96CC (40%) */
+--s-400: 72 123 192;/* #487BC0 (50%) */
+--s-500: 35 97 179;/* #2361B3 (BASE) */
+--s-600: 29 81 149;/* #1D5195 (60%) */
+--s-700: 23 65 119;/* #174177 (70%) */
+--s-800: 18 49 90;/* #12315A (80%) */
+--s-900: 12 32 60;/* #0C203C (90%) */
+--s-dark: 7 19 36;/* #071324 (100%) */
+
+--third: 235 219 200;/* #EBDBC8 (BASE) */
+--t-hover: 196 183 167;/* #C4B7A7 (60%) */
+
+--t-50: 251 248 244;/* #FBF8F4 (10%) */
+--t-100: 248 243 237;/* #F8F3ED (20%) */
+--t-200: 245 237 228;/* #F5EDE4 (30%) */
+--t-300: 242 231 218;/* #F2E7DA (40%) */
+--t-400: 238 225 209;/* #EEE1D1 (50%) */
+--t-500: 235 219 200;/* #EBDBC8 (BASE) */
+--t-600: 196 183 167;/* #C4B7A7 (60%) */
+--t-700: 157 146 133;/* #9D9285 (70%) */
+--t-800: 118 110 100;/* #766E64 (80%) */
+--t-900: 78 73 67;/* #4E4943 (90%) */
+--t-dark: 47 44 40;/* #2F2C28 (100%) */
+
 
   /* neutrals / fixed backgrounds */
   --gray: #2a3f50;
-  --bg: #FFF9F2;
+  --bg: #FFF;
   --bg-light: #F7EEE5;
   --bg-lighter: #E9F8F3;
   --bg-brand: #002704;
@@ -84,6 +99,20 @@
   --color-secondary-900: rgb(var(--s-900));
   --color-secondary-dark: rgb(var(--s-dark));
 
+  /* secondary */
+  --color-third: rgb(var(--third));
+  --color-third-hover: rgb(var(--t-hover));
+  --color-third-100: rgb(var(--t-100));
+  --color-third-200: rgb(var(--t-200));
+  --color-third-300: rgb(var(--t-300));
+  --color-third-400: rgb(var(--t-400));
+  --color-third-500: rgb(var(--t-500));
+  --color-third-600: rgb(var(--t-600));
+  --color-third-700: rgb(var(--t-700));
+  --color-third-800: rgb(var(--t-800));
+  --color-third-900: rgb(var(--t-900));
+  --color-third-dark: rgb(var(--t-dark));
+
   --color-gray: var(--gray);
   --color-action: var(--action);
 
@@ -114,11 +143,14 @@
 
 /*-- USED ---*/
 @import '../css/blocks/hero.scss';
+@import '../css/blocks/image.scss';
+@import '../css/blocks/about.scss';
+
+/*-- NOT USED --*/
 @import '../css/blocks/help.scss';
 @import '../css/blocks/cta-bg.scss';
 @import '../css/blocks/tiles.scss';
 @import '../css/blocks/content.scss';
-@import '../css/blocks/about.scss';
 @import '../css/blocks/team.scss';
 @import '../css/blocks/offer.scss';
 @import '../css/blocks/reviews.scss';
@@ -131,8 +163,6 @@
 @import '../css/blocks/hero-offer.scss';
 @import '../css/blocks/tabs.scss';
 @import '../css/blocks/proces.scss';
-
-/*-- NOT USED --*/
 @import '../css/blocks/complex.scss';
 @import '../css/blocks/works.scss';
 @import '../css/blocks/category-posts.scss';
@@ -147,7 +177,6 @@
 @import '../css/blocks/gains.scss';
 @import '../css/blocks/overlap.scss';
 @import '../css/blocks/what.scss';
-@import '../css/blocks/image.scss';
 @import '../css/blocks/cta.scss';
 @import '../css/blocks/connect.scss';
 @import '../css/blocks/gallery.scss';

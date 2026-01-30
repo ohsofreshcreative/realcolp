@@ -45,6 +45,11 @@ class Content extends Block
 				'return_format' => 'array',
 				'preview_size' => 'thumbnail',
 			])
+			->addImage('logo', [
+				'label' => 'Logo',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+			])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addWysiwyg('txt', [
 				'label' => 'Treść',
@@ -117,7 +122,7 @@ class Content extends Block
 					'none' => 'Brak (domyślne)',
 					'section-white' => 'Białe',
 					'section-light' => 'Jasne',
-					'section-gray' => 'Szare',
+					'section-base' => 'Podstawowe',
 					'section-brand' => 'Marki',
 					'section-gradient' => 'Gradient',
 					'section-dark' => 'Ciemne',

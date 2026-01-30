@@ -1,35 +1,38 @@
 @php
 $sectionClass = '';
+$sectionClass .= $flip ? ' order-flip' : '';
+$sectionClass .= $nolist ? ' no-list' : '';
+$sectionClass .= $wide ? ' wide' : '';
 $sectionClass .= $nomt ? ' !mt-0' : '';
+$sectionClass .= $gap ? ' wider-gap' : '';
+
+if (!empty($background) && $background !== 'none') {
+$sectionClass .= ' ' . $background;
+}
 @endphp
 
 <!--- values --->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-values -smt {{ $sectionClass }} {{ $section_class }}">
-	<div class="__wrapper c-main">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-content relative section-wrapper radius -smt {{ $sectionClass }} {{ $section_class }}">
 
-		<h3 class="m-header text-center w-full md:w-1/2 m-auto">{{ strip_tags($g_values['header']) }}</h3>
+	<div class="__wrapper c-main relative z-10">
+
+		<h3 data-gsap-element="header" class="m-header text-center w-full md:w-1/2 m-auto">{{ strip_tags($g_values['header']) }}</h3>
 
 		@if (!empty($r_values))
-		@php
-		$itemCount = count($r_values);
-		$gridCols = 1;
-		if ($itemCount == 2) $gridCols = 2;
-		if ($itemCount >= 3) $gridCols = 3;
-		$gridClass = $gridCols > 1 ? 'grid-cols-1 lg:grid-cols-' . $gridCols : 'grid-cols-1';
-		@endphp
 
-		<div class="grid {{ $gridClass }} gap-8 mt-10">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mt-10">
 			@foreach ($r_values as $item)
-			<div class="__card relative border-bottom-p pb-10">
-				@if (!empty($item['image']['url']))
-				<img class="mx-auto mb-6" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
-				@endif
+			<div data-gsap-element="image" class="__card relative overflow-hidden bg-white radius px-10 pt-14 pb-36">
 				@if (!empty($item['title']))
-				<h6 class="text-center mb-4">{{ $item['title'] }}</h6>
+				<h6 class="text-h7 mb-2">{{ $item['title'] }}</h6>
 				@endif
 				@if (!empty($item['text']))
-				<p class="text-center">{{ $item['text'] }}</p>
+				<p class="">{{ $item['text'] }}</p>
+				@endif
+
+				@if (!empty($item['image']['url']))
+				<img class="absolute -bottom-3" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
 				@endif
 			</div>
 			@endforeach
@@ -37,4 +40,6 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 		@endif
 
 	</div>
+
+	<img data-gsap-element="bg" class="__bg absolute h-[800px] left-20 top-1/2 -translate-y-1/2 opacity-60 pointer-events-none" src="/wp-content/uploads/2026/01/shape-white.svg" />
 </section>

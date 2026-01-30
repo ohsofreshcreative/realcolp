@@ -1,5 +1,5 @@
 <footer class="footer bg-white overflow-hidden relative z-10">
-	<div class="__wrapper c-main relative z-10">
+	<!-- <div class="__wrapper c-main relative z-10">
 		<div class="__top flex flex-col md:flex-row justify-between gap-6 mt-20">
 			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto max-w-46">
 
@@ -39,13 +39,12 @@
 		@endfor
 	</div>
 
-	<img class="__bg absolute -right-20 -bottom-60 opacity-50 scale-120 pointer-events-none" src="/wp-content/uploads/2026/01/plant-footer.svg" />
-	</div>
+	</div> -->
 
-	<div class="c-main flex flex-col md:flex-row justify-between gap-6 py-10 footer-bottom border-t border-primary-lighter">
+	<div class="c-main flex flex-col md:flex-row justify-between gap-6 py-10 footer-bottom">
 		<p class="">Copyright ©2025 <?php echo get_bloginfo('name'); ?>. All Rights Reserved</p>
 		<p class="flex gap-2">Designed &amp; Developed by
-			<a target="_blank" href="https://www.ohsofresh.pl" title="OhSoFresh"><img class="oh" src="/wp-content/themes/odt/resources/images/ohsofresh.svg"></a>
+			<a target="_blank" href="https://www.ohsofresh.pl" title="OhSoFresh"><img class="oh" src="<?php echo get_template_directory_uri(); ?>/resources/images/ohsofresh.svg"></a>
 		</p>
 	</div>
 

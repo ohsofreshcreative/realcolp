@@ -109,7 +109,7 @@ class CategoryPosts extends Block
 				'ui_off_text' => 'Nie',
 			])
 			->addTrueFalse('graybg', [
-				'label' => 'Szare tło',
+				'label' => 'Podstawowe tło',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',

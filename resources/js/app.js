@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.b-reviews')) import('./blocks/reviews');
   if (document.querySelector('.b-places')) import('./blocks/places');
   if (document.querySelector('.b-tabs')) import('./blocks/tabs');
+  if (document.querySelector('.b-about')) import('./blocks/about');
 });
 
 /*--- NOT USED ---*/

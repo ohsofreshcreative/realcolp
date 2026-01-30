@@ -34,17 +34,15 @@ class Bottom extends Field
 				'return_format' => 'array', // lub 'url', lub 'id'
 				'preview_size' => 'thumbnail',
 			])
-			->addText('txt', ['label' => 'Tekst'])
 			->addText('header', ['label' => 'Nagłówek'])
+			->addTextarea('address', [
+				'label' => 'Adres',
+				'rows' => 4,
+				'new_lines' => 'br',
+			])
 			->addText('phone', ['label' => 'Telefon'])
-			->addLink('button', [
-				'label' => 'Przycisk #1',
-				'return_format' => 'array',
-			])
-			->addLink('button2', [
-				'label' => 'Przycisk #2',
-				'return_format' => 'array',
-			])
+			->addText('mail', ['label' => 'Email'])
+			->addText('title', ['label' => 'Tytuł nad formularzem'])
 			->addText('shortcode', [
 				'label' => 'Kod formularza',
 				'instructions' => 'Wklej kod formularza:  [contact-form-7 id="f12c470" title="Contact form 1"]',

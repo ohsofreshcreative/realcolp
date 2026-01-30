@@ -4,7 +4,7 @@ $sectionClass .= $flip ? ' order-flip' : '';
 $sectionClass .= $wide ? ' wide' : '';
 $sectionClass .= $nomt ? ' !mt-0' : '';
 $sectionClass .= $lightbg ? ' section-light' : '';
-$sectionClass .= $graybg ? ' section-gray' : '';
+$sectionClass .= $graybg ? ' section-base' : '';
 $sectionClass .= $whitebg ? ' section-white' : '';
 $sectionClass .= $brandbg ? ' section-brand' : '';
 @endphp
