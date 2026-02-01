@@ -16,26 +16,26 @@ $sectionClass .= ' ' . $background;
 <section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="b-about relative -smt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main relative z-10">
-		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-20 md:gap-10">
 			@if (!empty($g_about['image']))
 
-			<div data-gsap-element="img" class="__photos">
+			<div data-gsap-element="img" class="__photos h-full">
 				@if (!empty($g_about_2['image1']))
 				<div data-gsap-element="image" class="__img2">
-					<img class="radius-img" src="{{ $g_about_2['image1']['url'] }}" alt="{{ $g_about_2['image1']['alt'] ?? '' }}">
+					<img class="rounded-xl md:rounded-3xl" src="{{ $g_about_2['image1']['url'] }}" alt="{{ $g_about_2['image1']['alt'] ?? '' }}">
 				</div>
 				@endif
 				@if (!empty($g_about_2['image2']))
 				<div data-gsap-element="image" class="__img3">
-					<img class="radius-img" src="{{ $g_about_2['image2']['url'] }}" alt="{{ $g_about_2['image2']['alt'] ?? '' }}">
+					<img class="rounded-xl md:rounded-3xl" src="{{ $g_about_2['image2']['url'] }}" alt="{{ $g_about_2['image2']['alt'] ?? '' }}">
 				</div>
 				@endif
 				@if (!empty($g_about_2['image3']))
 				<div data-gsap-element="image" class="__img4">
-					<img class="radius-img" src="{{ $g_about_2['image3']['url'] }}" alt="{{ $g_about_2['image3']['alt'] ?? '' }}">
+					<img class="rounded-xl md:rounded-3xl" src="{{ $g_about_2['image3']['url'] }}" alt="{{ $g_about_2['image3']['alt'] ?? '' }}">
 				</div>
 				@endif
-				<img class="__img1 object-cover w-full img-3xl __img radius-img" src="{{ $g_about['image']['url'] }}" alt="{{ $g_about['image']['alt'] ?? '' }}">
+				<img class="__img1 object-cover w-full img-3xl __img rounded-xl md:rounded-3xl" src="{{ $g_about['image']['url'] }}" alt="{{ $g_about['image']['alt'] ?? '' }}">
 			</div>
 			@endif
 
