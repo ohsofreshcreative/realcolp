@@ -11,7 +11,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 	class="b-hero bg-third section-wrapper radius relative overflow-hidden {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-20 py-10">
-		<div class="__content relative z-20 py-8 md:py-30">
+		<div class="__content relative z-20 py-0 md:py-30 order-2 lg:order-1">
 
 			<h1 data-gsap-element="header" class="m-header">
 				{{ $g_hero['title'] }}
@@ -38,9 +38,9 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 		</div>
 
 		@if ($g_hero['image'])
-		<div class="__img relative radius-img overflow-hidden">
+		<div class="__img relative radius-img overflow-hidden order-1 lg:order-2">
 			<img data-gsap-element="image" class="absolute bottom-10 left-10 w-24 md:w-max z-20" src="/wp-content/uploads/2026/01/shape-2.svg" />
-			<img data-gsap-element="image" class="object-cover rounded-[104px]" src="{{ $g_hero['image']['url'] }}" alt="{{ $g_hero['image']['alt'] ?? '' }}">
+			<img data-gsap-element="image" class="object-cover rounded-3xl md:rounded-[104] w-full h-[200px] sm:h-full" src="{{ $g_hero['image']['url'] }}" alt="{{ $g_hero['image']['alt'] ?? '' }}">
 		</div>
 		@endif
 	</div>
