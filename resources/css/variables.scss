@@ -950,9 +950,9 @@ h6,
 
 #mobile-menu-panel {
 	li a {
-		color: #fff;
+		color: var(--color-body);
 		font-size: 20px;
-		font-weight: 300;
+		font-weight: 400;
 	}
 
 	li a:hover {

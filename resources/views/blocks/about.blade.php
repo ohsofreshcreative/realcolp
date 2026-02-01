@@ -20,22 +20,22 @@ $sectionClass .= ' ' . $background;
 			@if (!empty($g_about['image']))
 
 			<div data-gsap-element="img" class="__photos">
-			@if (!empty($g_about_2['image1']))
-			<div data-gsap-element="image" class="__img2">
-				<img class="radius-img" src="{{ $g_about_2['image1']['url'] }}" alt="{{ $g_about_2['image1']['alt'] ?? '' }}">
-			</div>
-			@endif
-			@if (!empty($g_about_2['image2']))
-			<div data-gsap-element="image" class="__img3">
-				<img class="radius-img" src="{{ $g_about_2['image2']['url'] }}" alt="{{ $g_about_2['image2']['alt'] ?? '' }}">
-			</div>
-			@endif
-			@if (!empty($g_about_2['image3']))
-			<div data-gsap-element="image" class="__img4">
-				<img class="radius-img" src="{{ $g_about_2['image3']['url'] }}" alt="{{ $g_about_2['image3']['alt'] ?? '' }}">
-			</div>
-			@endif
-				<img class="__photo object-cover w-full img-3xl __img radius-img" src="{{ $g_about['image']['url'] }}" alt="{{ $g_about['image']['alt'] ?? '' }}">
+				@if (!empty($g_about_2['image1']))
+				<div data-gsap-element="image" class="__img2">
+					<img class="radius-img" src="{{ $g_about_2['image1']['url'] }}" alt="{{ $g_about_2['image1']['alt'] ?? '' }}">
+				</div>
+				@endif
+				@if (!empty($g_about_2['image2']))
+				<div data-gsap-element="image" class="__img3">
+					<img class="radius-img" src="{{ $g_about_2['image2']['url'] }}" alt="{{ $g_about_2['image2']['alt'] ?? '' }}">
+				</div>
+				@endif
+				@if (!empty($g_about_2['image3']))
+				<div data-gsap-element="image" class="__img4">
+					<img class="radius-img" src="{{ $g_about_2['image3']['url'] }}" alt="{{ $g_about_2['image3']['alt'] ?? '' }}">
+				</div>
+				@endif
+				<img class="__img1 object-cover w-full img-3xl __img radius-img" src="{{ $g_about['image']['url'] }}" alt="{{ $g_about['image']['alt'] ?? '' }}">
 			</div>
 			@endif
 

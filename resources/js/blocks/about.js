@@ -26,10 +26,10 @@
     // Możesz dowolnie eksperymentować z tymi liczbami, aby uzyskać idealny efekt.
 
     // Obrazki idące w dół (zgodnie ze scrollem)
-    createParallax(".__img1", 10);  // Główny obrazek - ruch subtelny
-    createParallax(".__img3", 35);  // Ten sam kierunek co img1, ale jeszcze wolniej
+    createParallax(".__img1", 25);  // Główny obrazek - ruch subtelny
+    createParallax(".__img3", 55);  // Ten sam kierunek co img1, ale jeszcze wolniej
 
     // Obrazki idące w górę (przeciwnie do scrolla)
-    createParallax(".__img2", -40); // Kierunek przeciwny, dość wolny
-    createParallax(".__img4", -60); // Kierunek przeciwny, trochę szybszy dla dynamiki
+    createParallax(".__img2", -60); // Kierunek przeciwny, dość wolny
+    createParallax(".__img4", -80); // Kierunek przeciwny, trochę szybszy dla dynamiki
   }

@@ -3,7 +3,9 @@ use App\Walkers\DropdownWalker;
 use App\Walkers\MobileDropdownWalker;
 @endphp
 
-<header x-data="{ mobileOpen: false }" class="relative top-0 z-50 bg-white masthead fixed-top">
+<header x-data="{ mobileOpen: false }" 
+        @close-mobile-menu.window="mobileOpen = false"
+        class="relative top-0 z-50 bg-white masthead fixed-top">
 
 	<!-- Desktop Header -->
 	<div class="c-main items-center justify-between hidden h-full py-4 md:px-4 lg:px-12 mx-auto md:flex">
@@ -64,7 +66,7 @@ use App\Walkers\MobileDropdownWalker;
 		x-transition:leave="transition ease-in duration-150"
 		x-transition:leave-start="opacity-100 transform translate-x-0"
 		x-transition:leave-end="opacity-0 transform translate-x-full"
-		class="mobile-menu fixed top-0 right-0 bottom-0 w-full h-full bg-gradient shadow-xl z-[51] overflow-y-auto md:hidden" {{-- ZMIANA: Usunięto style="display: none;" i zmieniono z-40 na z-[51] --}}
+		class="mobile-menu fixed top-0 right-0 bottom-0 w-full h-full bg-third shadow-xl z-[51] overflow-y-auto md:hidden"
 		aria-label="Menu mobilne">
 		<div class="p-4 relative z-10">
 			<div class="flex items-center justify-between mb-6">
@@ -73,7 +75,7 @@ use App\Walkers\MobileDropdownWalker;
 					@click="mobileOpen = false"
 					class="p-2 text-white rounded-md">
 					<span class="sr-only">Zamknij menu</span>
-					<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+					<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" aria-hidden="true">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 					</svg>
 				</button>

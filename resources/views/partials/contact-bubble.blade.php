@@ -9,7 +9,7 @@
         x-transition
         :class="{ '!-right-[244px]': isMinimized }"
         class="fixed bottom-12 right-6 md:right-12 z-50 w-[320px] transition-all duration-500 ease-in-out">
-        <div class="__sidebar relative bg-third-300 dashed-p-3 radius h-max p-8 shadow-xl">
+        <div class="__sidebar relative bg-white dashed-p-3 radius h-max p-8 shadow-xl">
 
             <!-- Przycisk zamknij (X) - teraz minimalizuje -->
             <button 

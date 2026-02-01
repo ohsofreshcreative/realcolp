@@ -1,5 +1,9 @@
 @import 'tailwindcss' theme(static);
 
+@theme {
+  --breakpoint-mlg: 840px;
+}
+
 /* bardzo ważne dla Sage/Blade: skanowanie klas */
 @source "../views/**/*.blade.php";
 @source "../../app/**/*.php";

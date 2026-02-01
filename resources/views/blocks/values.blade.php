@@ -21,7 +21,7 @@ $sectionClass .= ' ' . $background;
 
 		@if (!empty($r_values))
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mt-10">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-10">
 			@foreach ($r_values as $item)
 			<div data-gsap-element="image" class="__card relative overflow-hidden bg-white radius px-10 pt-14 pb-36">
 				@if (!empty($item['title']))
