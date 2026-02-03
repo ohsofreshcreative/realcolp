@@ -15,8 +15,8 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 			</div>
 
 			<div data-gsap-element="data" class="__data flex flex-col gap-2 mt-4">
-				<a href="tel:{{ preg_replace('/\s+/', '', $bottom['phone']) }}" class="__phone flex items-center">{{ $bottom['phone'] }}</a>
-				<a href="mailto:{{ $bottom['mail'] }}" class="__mail flex items-center">{{ $bottom['mail'] }}</a>
+				<a href="tel:{{ preg_replace('/\s+/', '', $bottom['phone']) }}" class="__phone flex items-center w-max">{{ $bottom['phone'] }}</a>
+				<a href="mailto:{{ $bottom['mail'] }}" class="__mail flex items-center w-max">{{ $bottom['mail'] }}</a>
 			</div>
 
 			<div data-gsap-element="social" class="__socials flex items-center gap-4 mt-6">
