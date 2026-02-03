@@ -18,7 +18,7 @@ use App\Walkers\MobileDropdownWalker;
 				@endif
 
 			</a>
-			<a target="_blank" href="https://realco.pl/"><img class="w-18" src="http://realcolp.local/wp-content/uploads/2026/02/realco_logo.svg" /></a>
+			<a target="_blank" href="https://realco.pl/"><img class="w-18" src="/wp-content/uploads/2026/02/realco_logo.svg" /></a>
 		</div>
 		@if (has_nav_menu('primary_navigation'))
 
@@ -49,7 +49,7 @@ use App\Walkers\MobileDropdownWalker;
 				@endif
 
 			</a>
-			<a target="_blank" href="https://realco.pl/"><img class="w-18" src="http://realcolp.local/wp-content/uploads/2026/02/realco_logo.svg" /></a>
+			<a target="_blank" href="https://realco.pl/"><img class="w-18" src="/wp-content/uploads/2026/02/realco_logo.svg" /></a>
 		</div>
 		<button
 			@click.stop="mobileOpen = !mobileOpen"
@@ -86,7 +86,7 @@ use App\Walkers\MobileDropdownWalker;
 					<span class="">
 						<a class="brand shrink-0" href="{{ home_url('/') }}"><img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="w-auto max-w-[200px] h-12"></a>
 					</span>
-					<a target="_blank" href="https://realco.pl/"><img class="w-18" src="http://realcolp.local/wp-content/uploads/2026/02/realco_logo.svg" /></a>
+					<a target="_blank" href="https://realco.pl/"><img class="w-18" src="/wp-content/uploads/2026/02/realco_logo.svg" /></a>
 				</div>
 				<button
 					@click="mobileOpen = false"
