@@ -3,20 +3,25 @@ use App\Walkers\DropdownWalker;
 use App\Walkers\MobileDropdownWalker;
 @endphp
 
-<header x-data="{ mobileOpen: false }" 
-        @close-mobile-menu.window="mobileOpen = false"
-        class="relative top-0 z-50 bg-white masthead fixed-top">
+<header x-data="{ mobileOpen: false }"
+	@close-mobile-menu.window="mobileOpen = false"
+	class="relative top-0 z-50 bg-white masthead fixed-top">
 
 	<!-- Desktop Header -->
 	<div class="c-main items-center justify-between hidden h-full py-4 md:px-4 lg:px-12 mx-auto md:flex">
-		<a class="brand w-1/6 min-w-25" href="#hero">
-			@if ($logo)
-			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto h-12 -top-0.5">
-			@else
-			<span class="text-xl font-bold">{{ $siteName }}</span>
-			@endif
-		</a>
+		<div class="flex items-center gap-12">
+			<a class="brand" href="#hero">
+				@if ($logo)
+				<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative  -top-0.5">
+				@else
+				<span class="text-xl font-bold">{{ $siteName }}</span>
+				@endif
+
+			</a>
+			<a target="_blank" href="https://realco.pl/"><img class="w-18" src="http://realcolp.local/wp-content/uploads/2026/02/realco_logo.svg" /></a>
+		</div>
 		@if (has_nav_menu('primary_navigation'))
+
 		<nav class="ml-4  nav-primary w-max" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
 			{!! wp_nav_menu([
 			'theme_location' => 'primary_navigation',
@@ -25,20 +30,27 @@ use App\Walkers\MobileDropdownWalker;
 			'echo' => false,
 			'walker' => new DropdownWalker(),
 			]) !!}
+
 		</nav>
 		@endif
+
+
 		<!-- <a class="__menu-btn bg-primary !text-white font-semibold rounded-full whitespace-nowrap py-2 px-2 lg:px-3 ml-2" href="/kontakt">Skontaktuj się z nami</a> -->
 	</div>
 
 	<!-- Mobile Header Bar -->
-	<div class="flex items-center justify-between p-4 mobile-menu fixed-top md:hidden gap-20">
-		<a class="brand" href="#hero">
-			@if ($logo)
-			<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto h-12 -top-0.5 max-w-[200px]">
-			@else
-			<span class="text-lg font-bold">{{ $siteName }}</span>
-			@endif
-		</a>
+	<div class="flex items-center justify-between p-4 mobile-menu fixed-top md:hidden gap-16">
+		<div class="flex items-center gap-8">
+			<a class="brand" href="#hero">
+				@if ($logo)
+				<img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="relative w-auto h-10 -top-0.5 max-w-[200px]">
+				@else
+				<span class="text-lg font-bold">{{ $siteName }}</span>
+				@endif
+
+			</a>
+			<a target="_blank" href="https://realco.pl/"><img class="w-18" src="http://realcolp.local/wp-content/uploads/2026/02/realco_logo.svg" /></a>
+		</div>
 		<button
 			@click.stop="mobileOpen = !mobileOpen"
 			class="p-2 primary bg-white rounded-md"
@@ -70,7 +82,12 @@ use App\Walkers\MobileDropdownWalker;
 		aria-label="Menu mobilne">
 		<div class="p-4 relative z-10">
 			<div class="flex items-center justify-between mb-6">
-				<span class=""><a class="brand shrink-0" href="{{ home_url('/') }}"><img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="w-auto max-w-[200px] h-12"></a></span>
+				<div class="flex items-center gap-8">
+					<span class="">
+						<a class="brand shrink-0" href="{{ home_url('/') }}"><img src="{{ $logo['url'] }}" alt="{{ $logo['alt'] ?? 'Logo' }}" class="w-auto max-w-[200px] h-12"></a>
+					</span>
+					<a target="_blank" href="https://realco.pl/"><img class="w-18" src="http://realcolp.local/wp-content/uploads/2026/02/realco_logo.svg" /></a>
+				</div>
 				<button
 					@click="mobileOpen = false"
 					class="p-2 text-white rounded-md">
@@ -92,6 +109,7 @@ use App\Walkers\MobileDropdownWalker;
 				]) !!}
 			</nav>
 			@endif
+
 
 			<!-- <div class="mt-8">
 				<a href="/kontakt" class="block w-full white-btn">

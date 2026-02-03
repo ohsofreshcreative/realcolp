@@ -20,12 +20,19 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 			</div>
 
 			<div data-gsap-element="social" class="__socials flex items-center gap-4 mt-6">
-				<a href=""><img src="/wp-content/uploads/2026/01/fb.svg" /></a>
-				<a href=""><img src="/wp-content/uploads/2026/01/ig.svg" /></a>
+				<a target="_blank" href="https://www.facebook.com/realco.deweloper/"><img src="/wp-content/uploads/2026/01/fb.svg" /></a>
+				<a target="_blank" href="https://www.instagram.com/realco_property/"><img src="/wp-content/uploads/2026/01/ig.svg" /></a>
+			</div>
+
+			<div data-gsap-element="social" class="__service mt-10">
+				<img class="aspect-square rounded-full w-36" src="{{ $bottom['image']['url'] }}" />
+				<div class="__txt mt-2">
+					{!! $bottom['service'] !!}
+				</div>
 			</div>
 		</div>
 
-		<div data-gsap-element="form" class="">
+		<div data-gsap-element="form" class="__form">
 			<h4 data-gsap-element="header" class="mb-6">{{ $bottom['title'] }}</h4>
 			{!! do_shortcode($bottom['shortcode']) !!}
 		</div>

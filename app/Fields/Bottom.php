@@ -34,6 +34,12 @@ class Bottom extends Field
 				'return_format' => 'array', // lub 'url', lub 'id'
 				'preview_size' => 'thumbnail',
 			])
+			->addWysiwyg('service', [
+				'label' => 'Opiekun klienta',
+				'tabs' => 'all',
+				'toolbar' => 'full',
+				'media_upload' => false,
+			])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addTextarea('address', [
 				'label' => 'Adres',
