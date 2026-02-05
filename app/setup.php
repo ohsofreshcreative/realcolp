@@ -582,4 +582,9 @@ add_action('wp_footer', function () {
 
   $zgody_block = \implode("\n", $lines);
 
-  if (isset($components['body']) && \is_string($components['b]()_
+  if (isset($components['body']) && \is_string($components['body'])) {
+    $components['body'] = \str_replace('[_voxc_zgody]', $zgody_block, $components['body']);
+  }
+
+  return $components;
+}, 10, 3);
