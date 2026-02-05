@@ -549,11 +549,19 @@ add_action('wp_footer', function () {
 });
 
 /*--- FORM CRM ---*/
-add_filter('wpcf7_mail_components', function ($components, $contact_form, $mail_tag) {
-  $submission = WPCF7_Submission::get_instance();
-  if (!$submission) return $components;
+\add_filter('wpcf7_mail_components', function ($components, $contact_form, $mail_tag) {
 
-  $posted = $submission->get_posted_data();
+  // CF7 może nie być dostępny w każdym momencie
+  if (!\class_exists('\WPCF7_Submission')) {
+    return $components;
+  }
+
+  $submission = \WPCF7_Submission::get_instance();
+  if (!$submission) {
+    return $components;
+  }
+
+  $posted = (array) $submission->get_posted_data();
 
   $zgoda_mail_txt = 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez RealCo Property Investment and Development Sp. z o.o., ul. Zielna 37, 00-108 Warszawa, zawartych w niniejszym formularzu kontaktowym, w celu przesyłania mi ofert handlowych dotyczących produktów własnych spółki oraz spółek celowych drogą elektroniczną.';
   $zgoda_tel_txt  = 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez RealCo Property Investment and Development Sp. z o.o., ul. Zielna 37, 00-108 Warszawa, zawartych w niniejszym formularzu kontaktowym, w celu kontaktu telefonicznego przez przedstawicieli spółki w sprawach związanych z ofertą handlową produktów własnych oraz spółek celowych.';
@@ -561,6 +569,7 @@ add_filter('wpcf7_mail_components', function ($components, $contact_form, $mail_
 
   $lines = [];
 
+  // Twoje nazwy acceptance z formularza
   if (!empty($posted['acceptance-1'])) {
     $lines[] = 'ZGODA_MAIL (' . $zgoda_mail_txt . ')';
   }
@@ -571,11 +580,6 @@ add_filter('wpcf7_mail_components', function ($components, $contact_form, $mail_
 
   $lines[] = 'ZGODA_OSWIADCZENIE (' . $oswiadczenie_txt . ')';
 
-  $zgody_block = implode("\n", $lines);
+  $zgody_block = \implode("\n", $lines);
 
-  if (!empty($components['body'])) {
-    $components['body'] = str_replace('[_voxc_zgody]', $zgody_block, $components['body']);
-  }
-
-  return $components;
-}, 10, 3);
+  if (isset($components['body']) && \is_string($components['b]()_
