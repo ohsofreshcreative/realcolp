@@ -549,34 +549,3 @@ add_action('wp_footer', function () {
 });
 
 /*--- FORM CRM ---*/
-
-add_filter('wpcf7_mail_components', function ($components, $contact_form, $mail_tag) {
-  $submission = WPCF7_Submission::get_instance();
-  if (!$submission) return $components;
-
-  $posted = $submission->get_posted_data();
-
-  $zgoda_mail_txt = 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez RealCo Property Investment and Development Sp. z o.o., ul. Zielna 37, 00-108 Warszawa, zawartych w niniejszym formularzu kontaktowym, w celu przesyłania mi ofert handlowych dotyczących produktów własnych spółki oraz spółek celowych drogą elektroniczną.';
-  $zgoda_tel_txt  = 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez RealCo Property Investment and Development Sp. z o.o., ul. Zielna 37, 00-108 Warszawa, zawartych w niniejszym formularzu kontaktowym, w celu kontaktu telefonicznego przez przedstawicieli spółki w sprawach związanych z ofertą handlową produktów własnych oraz spółek celowych.';
-  $oswiadczenie_txt = 'Administratorem Państwa danych osobowych jest RealCo Property Investment and Development Sp. z o.o., ul. Zielna 37, 00-108 Warszawa. Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z Polityką Prywatności.';
-
-  $lines = [];
-
-  if (!empty($posted['acceptance-1'])) {
-    $lines[] = 'ZGODA_MAIL (' . $zgoda_mail_txt . ')';
-  }
-
-  if (!empty($posted['acceptance-2'])) {
-    $lines[] = 'ZGODA_TEL (' . $zgoda_tel_txt . ')';
-  }
-
-  $lines[] = 'ZGODA_OSWIADCZENIE (' . $oswiadczenie_txt . ')';
-
-  $zgody_block = implode("\n", $lines);
-
-  if (!empty($components['body'])) {
-    $components['body'] = str_replace('[_voxc_zgody]', $zgody_block, $components['body']);
-  }
-
-  return $components;
-}, 10, 3);
