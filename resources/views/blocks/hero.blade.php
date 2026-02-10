@@ -39,7 +39,7 @@ $sectionClass .= $nomt ? ' !mt-0' : '';
 
 		@if ($g_hero['image'])
 		<div class="__img relative radius-img overflow-hidden order-1 lg:order-2">
-			<img data-gsap-element="image" class="absolute bottom-10 left-10 w-24 md:w-max z-20" src="/wp-content/uploads/2026/01/shape-2.svg" />
+			<img data-gsap-element="image" class="absolute mix-blend-overlay opacity-50 bottom-10 left-10 w-24 md:w-max z-20" src="/wp-content/uploads/2026/01/shape-2.svg" />
 			<img data-gsap-element="image" class="object-cover rounded-3xl md:rounded-[104] w-full h-[200px] sm:h-full" src="{{ $g_hero['image']['url'] }}" alt="{{ $g_hero['image']['alt'] ?? '' }}">
 		</div>
 		@endif
