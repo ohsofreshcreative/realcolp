@@ -20,14 +20,14 @@ $sectionClass .= $bgClass[$bg ?? ''] ?? '';
 
 <!--- wysiwyg -->
 
-<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="wysiwyg relative pt-10 {{ $sectionClass }} {{ $section_class }}">
+<section data-gsap-anim="section" @if(!empty($section_id)) id="{{ $section_id }}" @endif class="wysiwyg relative pt-10 -smt {{ $sectionClass }} {{ $section_class }}">
 
 	<div class="__wrapper c-main relative">
 		@if (!empty($g_wysiwyg['header']))
-		<h2 data-gsap-element="header" class="">{{ $g_wysiwyg['header'] }}</h2>
+		<h2 data-gsap-element="header" class="text-center">{{ $g_wysiwyg['header'] }}</h2>
 		@endif
 
-		<div data-gsap-element="txt" class="">
+		<div data-gsap-element="txt" class="__txt mt-6">
 			{!! $g_wysiwyg['txt'] !!}
 		</div>
 
